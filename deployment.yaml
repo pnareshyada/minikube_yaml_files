@@ -1,0 +1,22 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: sparkjava-deployment
+  labels:
+    app: sparkjava
+  namespace: sparkjava
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: sparkjava
+  template:
+    metadata:
+      labels:
+        app: sparkjava
+    spec:
+      containers:
+      - name: sparkjava
+        image: xxxxxxxxxxxx
+        ports:
+        - containerPort: 8080
